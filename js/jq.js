@@ -1,4 +1,7 @@
 const topMenu = $("nav ul.gnb>li");
+const sections = $(".section")
+const prjLeftSections = $("#section2 div:nth-child(odd)")
+const speed = 500
 //button click시 이동
 topMenu.click(function (e) {
   e.preventDefault();
@@ -10,7 +13,26 @@ topMenu.click(function (e) {
   $("html,body").animate({ scrollTop: offset }, 1000, "easeOutCirc");
 });
 
-$(window).scroll(function () {
+$(window).on("scroll", function () {
+  let scrollTop = $(window).scrollTop()
+  sections.each(function (i,o) {
+    if (scrollTop >= sections.eq(i).offset().top - speed) {
+      $("nav ul.gnb li")
+      .eq(i)
+      .addClass("active")
+      .siblings()
+      .removeClass("active");
+    }
+  })
+  prjLeftSections.each(function (i,o){
+    if (scrollTop >= prjLeftSections.eq(i).offset().top - speed) {
+      prjLeftSections.eq(i).find('.left').addClass('in');
+			//prjSection.eq(i).find('.right span').addClass('show');
+    }
+  })
+});
+
+/* $(window).scroll(function () {
   let scrollTop = $(window).scrollTop();
   if (scrollTop >= $("#section1").offset().top - 500) {
     $("nav ul.gnb li")
@@ -35,7 +57,7 @@ $(window).scroll(function () {
       .siblings()
       .removeClass("active");
   }
-});
+}); */
 
 /* SCROLL Events */
 function stickyFn() {
