@@ -455,21 +455,22 @@ header .right .bg_shape {
   display: inline-block;
 }
 #section1 .inner .tab_content #skills li .bar .progress {
-  width: 90%;
-  height: 100%;
-  display: block;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 0;
   border-radius: 20px;
   background: var(--linear-gradient-primary);
-  opacity: 0.8;
+  
 }
-#section1 .inner .tab_content #skills li:nth-of-type(2n) .bar .progress {
+/* #section1 .inner .tab_content #skills li:nth-of-type(2n) .bar .progress {
   width: 80%;
 }
 #section1 .inner .tab_content #skills li:nth-of-type(5) .bar .progress,
 #section1 .inner .tab_content #skills li:nth-of-type(7) .bar .progress {
   width: 70%;
-}
-#section1 .inner .tab_content #skills li .bar .number {
+} */
+#section1 .inner .tab_content #skills li .bar .rate {
   color: var(--accent-clr);
   font-size: 16px;
   width: 5%;

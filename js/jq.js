@@ -97,6 +97,46 @@ tabList.eq(0).addClass("active");
 
 
 
+/* skills progress bar */
+let animationOst = $("#skills").offset().top - 600;
+const progressWrap = $(".bar");
+let isAni = false;
+
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= animationOst && !isAni) {
+    progressAnimation();
+  }
+});
+
+function progressAnimation(params) {
+  progressWrap.each(function () {
+    let $this = $(this),
+      progressBar = $this.find(".progress"),
+      progressText = $this.find(".rate"),
+      progressRate = progressText.attr("data-rate");
+    //console.log(progressRate);
+
+    progressBar.stop().animate({ width: progressRate + "%" }, 2500); //2.5s
+
+    let text = function () {
+      $({ rate: 0 }).animate(
+        { rate: progressRate },
+        {
+          duration: 2000,
+          progress: function () {
+            let now = this.rate;
+            console.log(now);
+			progressText.text(Math.ceil(now) + "%");
+          },
+		  complete: function(){isAni=true}
+        })
+    }
+    text()
+  })
+}
+
+
+
 
 /* project mockup hover action */
 $(".hidden").hover(
