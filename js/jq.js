@@ -1,6 +1,6 @@
 const topMenu = $("nav ul.gnb>li");
 const sections = $(".section")
-const prjLeftSections = $("#section2 div:nth-child(odd)")
+const prjSections = $("#section2 .portfolio")
 const speed = 500
 //button click시 이동
 topMenu.click(function (e) {
@@ -13,7 +13,25 @@ topMenu.click(function (e) {
   $("html,body").animate({ scrollTop: offset }, 1000, "easeOutCirc");
 });
 
+
+
+
+/* ***SCROLL Events*** */
+//sticky header
+function stickyFn() {
+  const nav = $("nav");
+  $(window).scroll(function () {
+    if ($(window).scrollTop() >= 10) {
+      nav.addClass("sticky");
+    } else {
+      nav.removeClass("sticky");
+    }
+  });
+}
+stickyFn();
+
 $(window).on("scroll", function () {
+  //scroll activate gnb
   let scrollTop = $(window).scrollTop()
   sections.each(function (i,o) {
     if (scrollTop >= sections.eq(i).offset().top - speed) {
@@ -24,9 +42,14 @@ $(window).on("scroll", function () {
       .removeClass("active");
     }
   })
-  prjLeftSections.each(function (i,o){
-    if (scrollTop >= prjLeftSections.eq(i).offset().top - speed) {
-      prjLeftSections.eq(i).find('.left').addClass('in');
+ 
+
+
+  //project section slide-ins
+  prjSections.each(function (i,o){
+    if (scrollTop >= prjSections.eq(i).offset().top - speed) {
+      prjSections.eq(i).find('.left').addClass('in');
+		  prjSections.eq(i).find('.right').addClass('in');
 			//prjSection.eq(i).find('.right span').addClass('show');
     }
   })
@@ -59,22 +82,11 @@ $(window).on("scroll", function () {
   }
 }); */
 
-/* SCROLL Events */
-function stickyFn() {
-  const nav = $("nav");
-  $(window).scroll(function () {
-    if ($(window).scrollTop() >= 10) {
-      nav.addClass("sticky");
-    } else {
-      nav.removeClass("sticky");
-    }
-  });
-}
-stickyFn();
 
 
 
-/* ABOUT Page Tab */
+/* ** ABOUT Page ** */
+//tab
 let aboutPg = $("#section1"),
   tabList = aboutPg.find(".tab li"),
   tabPanel = aboutPg.find(".tab_content>div");
@@ -95,9 +107,7 @@ tabList.each(function (i, e) {
 tabPanel.eq(0).show();
 tabList.eq(0).addClass("active");
 
-
-
-/* skills progress bar */
+//skills progress bar 
 let animationOst = $("#skills").offset().top - 600;
 const progressWrap = $(".bar");
 let isAni = false;
