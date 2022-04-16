@@ -50,37 +50,9 @@ $(window).on("scroll", function () {
     if (scrollTop >= prjSections.eq(i).offset().top - speed) {
       prjSections.eq(i).find('.left').addClass('in');
 		  prjSections.eq(i).find('.right').addClass('in');
-			//prjSection.eq(i).find('.right span').addClass('show');
     }
   })
 });
-
-/* $(window).scroll(function () {
-  let scrollTop = $(window).scrollTop();
-  if (scrollTop >= $("#section1").offset().top - 500) {
-    $("nav ul.gnb li")
-      .eq(0)
-      .addClass("active")
-      .siblings()
-      .removeClass("active");
-  }
-  if (scrollTop >= $("#section2").offset().top - 500) {
-    $("nav ul.gnb li")
-      .eq(1)
-      .addClass("active")
-      .siblings()
-      .removeClass("active");
-    $("#section2").find(".left").addClass("in");
-    //$("#section2").find(".left").css("left", "-200%").stop().animate({"left":0},2000);
-  }
-  if (scrollTop >= $("#section3").offset().top - 500) {
-    $("nav ul.gnb li")
-      .eq(2)
-      .addClass("active")
-      .siblings()
-      .removeClass("active");
-  }
-}); */
 
 
 
@@ -103,6 +75,11 @@ tabList.each(function (i, e) {
     tabPanel.hide();
     $("#"+panel).show(); 
   });
+  
+  //Active tab triggers progressanimation
+  if(aboutPg.find(".skills").hasClass("active")){
+    progressAnimation();
+  }
 });
 tabPanel.eq(0).show();
 tabList.eq(0).addClass("active");
@@ -126,7 +103,7 @@ function progressAnimation(params) {
       progressRate = progressText.attr("data-rate");
     //console.log(progressRate);
 
-    progressBar.stop().animate({ width: progressRate + "%" }, 2500); //2.5s
+    progressBar.stop().delay(500).animate({ width: progressRate + "%" }, 2500); //2.5s
 
     let text = function () {
       $({ rate: 0 }).animate(
@@ -135,7 +112,7 @@ function progressAnimation(params) {
           duration: 2000,
           progress: function () {
             let now = this.rate;
-            console.log(now);
+            //console.log(now);
 			progressText.text(Math.ceil(now) + "%");
           },
 		  complete: function(){isAni=true}
@@ -154,7 +131,7 @@ $(".hidden").hover(
     let ah = $(this).innerHeight();
     let img = $(this).find("img");
     let imgh = img.innerHeight();
-    console.log(`a height:${ah} img height:${imgh}`);
+    //console.log(`a height:${ah} img height:${imgh}`);
     img.stop().animate({ top: ah - imgh }, 4000);
   },
   function () {
