@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.logo_left{
+		fill:none;
+		stroke:#D2302C;
+		stroke-width:
+		9.941;
+		stroke-linecap:round;
+		stroke-linejoin:round
+		stroke-miterlimit:10;
+		stroke-dashoffset: 300;
+		animation: draw 5s cubic-bezier(0,.4,1,.5) infinite;
+    }
+
+    @keyframes draw {
+      0% {
+        stroke-dasharray: 0 300;
+        fill-opacity: 0;
+      }
+
+      90% {
+        stroke-dasharray: 300 0;
+        fill-opacity: 0;
+      }
+
+      100% {
+        stroke-dasharray: 300 0;
+        fill-opacity: 1;
+        
+      }
+    }
+	
+</style>
+<path class="logo_left" d="M73.1,10.3c-5.3-2.9-11.2-4.6-17.7-4.9C32.1,4.6,13,23.3,13,46.4c0,10,3.6,19.2,9.6,26.3c2,2.4,1.9,6-0.4,8.2
+	c-2.1,1.9-4.4,3.3-6.1,4.2c-1.4,0.7-1.5,2.7-0.2,3.6c18,11.3,74.1,9.9,78.8-35.9c1-10.1-1.4-19.8-6.3-27.9"/>
+</svg>

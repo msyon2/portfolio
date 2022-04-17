@@ -103,13 +103,13 @@ function progressAnimation(params) {
       progressRate = progressText.attr("data-rate");
     //console.log(progressRate);
 
-    progressBar.stop().delay(500).animate({ width: progressRate + "%" }, 2500); //2.5s
+    progressBar.stop().delay(1000).animate({ width: progressRate + "%" }, 3500); //2.5s
 
     let text = function () {
       $({ rate: 0 }).animate(
         { rate: progressRate },
         {
-          duration: 2000,
+          duration: 3500,
           progress: function () {
             let now = this.rate;
             //console.log(now);
@@ -139,3 +139,16 @@ $(".hidden").hover(
     img.stop().animate({ top: 0 }, 4000);
   }
 );
+
+
+
+/* gallery open toggle*/
+const cards = $('.work');
+  cards.on({
+    click: function (e) {
+      e.preventDefault();
+      $(this).toggleClass("open");
+      
+    }
+  })
+
