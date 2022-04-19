@@ -45,7 +45,7 @@ $(window).on("scroll", function () {
  
 
 
-  //project section slide-ins
+  //project section slide-ins 
   prjSections.each(function (i,o){
     if (scrollTop >= prjSections.eq(i).offset().top - speed) {
       prjSections.eq(i).find('.left').addClass('in');
@@ -77,24 +77,42 @@ tabList.each(function (i, e) {
   });
   
   //Active tab triggers progressanimation
-  if(aboutPg.find(".skills").hasClass("active")){
+  /* if (tabList.eq(1).hasClass("active")){
     progressAnimation();
-  }
+  } */
 });
 tabPanel.eq(0).show();
 tabList.eq(0).addClass("active");
 
-//skills progress bar 
+/* let skillsTab = tabList.find(".skills");
+if (skillsTab.hasClass("active")){
+  if(!progressWrap.is(":animated")){
+      progressAnimation();
+  }
+} */
+  /* skillsTab.on("click", function(e){
+    e.preventDefault();
+    if(!progressWrap.is(":animated")){
+      
+      progressAnimation();
+    }
+  }) */
+
+//skills progress bar activate on scroll
 let animationOst = $("#skills").offset().top - 600;
 const progressWrap = $(".bar");
 let isAni = false;
 
 $(window).scroll(function () {
   if ($(window).scrollTop() >= animationOst && !isAni) {
-    progressAnimation();
+    //start the animation after specified time
+    setTimeout(function(){
+      progressAnimation();
+    },30000)
   }
 });
 
+//progress animation function
 function progressAnimation(params) {
   progressWrap.each(function () {
     let $this = $(this),
@@ -103,13 +121,13 @@ function progressAnimation(params) {
       progressRate = progressText.attr("data-rate");
     //console.log(progressRate);
 
-    progressBar.stop().delay(1000).animate({ width: progressRate + "%" }, 3500); //2.5s
+    progressBar.stop().delay(300).animate({ width: progressRate + "%" }, 4500); //2.5s
 
     let text = function () {
       $({ rate: 0 }).animate(
         { rate: progressRate },
         {
-          duration: 3500,
+          duration: 4500,
           progress: function () {
             let now = this.rate;
             //console.log(now);
