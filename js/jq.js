@@ -14,6 +14,13 @@ topMenu.click(function (e) {
 });
 
 
+//custom cursor
+$(window).on({
+  mousemove: function (e) {
+    gsap.to("#cursor", {duration: .2, left: e.pageX -20, top: e.pageY -20})
+  }
+})
+
 
 
 /* ***SCROLL Events*** */

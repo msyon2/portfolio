@@ -60,11 +60,11 @@ jQuery(function () {
           cnt++;
           slideAnimation();
         }
-        if (cnt >= 3) {
-          cnt = 3;
+        if (cnt >= 4) {
+          cnt = 4;
         }
         slide.stop().animate({ top: -slideH * cnt }, 800, function () {
-          if (cnt == 3) {
+          if (cnt == 4) {
             $("html,body")
               .stop()
               .animate({ scrollTop: current.next().offset().top }, 800);
@@ -96,10 +96,12 @@ jQuery(function () {
         //console.log(newWheelDelta);
 
         prjSections.each(function(i,o) {
+          
           if (newWheelDelta >= -720 && i <= prjSections.length){
-            i++;
             prjSections.eq(i).find(".left").addClass("in");
             prjSections.eq(i).find(".right").addClass("in");
+            i++;
+            
           }
         });
       }
