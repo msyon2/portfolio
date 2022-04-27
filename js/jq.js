@@ -17,7 +17,17 @@ topMenu.click(function (e) {
 //custom cursor
 $(window).on({
   mousemove: function (e) {
-    gsap.to("#cursor", {duration: .2, left: e.pageX -20, top: e.pageY -20})
+    gsap.to("#cursor", {duration: .2, left: e.pageX -4, top: e.pageY -4})
+
+    /* let pageX = e.pageX
+		let pageY = e.pageY
+
+		let standardX = $(window).width() / 2 - pageX
+		let standardY = $(window).height() / 2 - pageY
+
+		$(".sub_area .obj1").attr({ style: "transform : translate(" + standardX / 60 + "px," + standardY / 40 + "px)" })
+		$(".sub_area .obj2").attr({ style: "transform : translate(" + standardX / 20 + "px," + standardY / 20 + "px)" }) */
+
   }
 })
 
@@ -37,6 +47,7 @@ function stickyFn() {
 }
 stickyFn();
 
+
 $(window).on("scroll", function () {
   //scroll activate gnb
   let scrollTop = $(window).scrollTop()
@@ -50,7 +61,6 @@ $(window).on("scroll", function () {
     }
   })
  
-
 
   //project section slide-ins 
   prjSections.each(function (i,o){
@@ -66,11 +76,33 @@ $(window).on("scroll", function () {
 
 /* ** ABOUT Page ** */
 //tab
+
 let aboutPg = $("#section1"),
   tabList = aboutPg.find(".tab li"),
   tabPanel = aboutPg.find(".tab_content>div");
 
-tabList.each(function (i, e) {
+  $(tabList).on({
+    click:function (e) {
+      let tab = $(this); //this = 순환하고 있는 요소중 현재 번째
+      let link = tab.find("a").attr("href");
+      let panel = link.substr(1); 
+      e.preventDefault();
+    tabList.removeClass("active");
+    tab.addClass("active");
+    tabPanel.hide();
+    $("#"+panel).show(); 
+
+
+    //Active tab triggers progressanimation
+  if(tabList.eq(1).hasClass("active")){
+    progressAnimation();
+  }
+    }
+  })
+  tabPanel.eq(0).show();
+  tabList.eq(0).addClass("active");
+  
+/* tabList.each(function (i, e) {
   //console.log(i,e); //(index no, 값)
   let tab = $(this); //this = 순환하고 있는 요소중 현재 번째
   let link = tab.find("a").attr("href");
@@ -84,40 +116,28 @@ tabList.each(function (i, e) {
   });
   
   //Active tab triggers progressanimation
-  /* if (tabList.eq(1).hasClass("active")){
-    progressAnimation();
-  } */
+  //if (tabList.eq(1).hasClass("active")){
+    //progressAnimation();
+  //}
+
 });
 tabPanel.eq(0).show();
-tabList.eq(0).addClass("active");
+tabList.eq(0).addClass("active"); */
 
-/* let skillsTab = tabList.find(".skills");
-if (skillsTab.hasClass("active")){
-  if(!progressWrap.is(":animated")){
-      progressAnimation();
-  }
-} */
-  /* skillsTab.on("click", function(e){
-    e.preventDefault();
-    if(!progressWrap.is(":animated")){
-      
-      progressAnimation();
-    }
-  }) */
 
 //skills progress bar activate on scroll
 let animationOst = $("#skills").offset().top - 600;
 const progressWrap = $(".bar");
 let isAni = false;
 
-$(window).scroll(function () {
+/* $(window).scroll(function () {
   if ($(window).scrollTop() >= animationOst && !isAni) {
     //start the animation after specified time
     setTimeout(function(){
       progressAnimation();
     },30000)
   }
-});
+}); */
 
 //progress animation function
 function progressAnimation(params) {
@@ -128,13 +148,13 @@ function progressAnimation(params) {
       progressRate = progressText.attr("data-rate");
     //console.log(progressRate);
 
-    progressBar.stop().delay(300).animate({ width: progressRate + "%" }, 4500); //2.5s
+    progressBar.stop().delay(300).animate({ width: progressRate + "%" }, 2500); //2.5s
 
     let text = function () {
       $({ rate: 0 }).animate(
         { rate: progressRate },
         {
-          duration: 4500,
+          duration: 2500,
           progress: function () {
             let now = this.rate;
             //console.log(now);

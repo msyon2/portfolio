@@ -92,17 +92,28 @@ jQuery(function () {
       //project slide animation trigger 함수
       function slideAnimation(){
         const prjSections = $("#section2 .portfolio");
-        let newWheelDelta = null;
+        let newWheelDelta = prjSections.outerHeight();
+        let slideScrollTop = prjSections.offset().top;
         //console.log(newWheelDelta);
 
         prjSections.each(function(i,o) {
+           
           
-          if (newWheelDelta >= -720 && i <= prjSections.length){
+          if (prjSections.eq(i).offset().top = slideScrollTop - (newWheelDelta * i) ){
+            console.log(slideScrollTop)
+            console.log(prjSections.offset().top)
+            
             prjSections.eq(i).find(".left").addClass("in");
             prjSections.eq(i).find(".right").addClass("in");
             i++;
+
+          /* if (newWheelDelta >= -900 && i <= prjSections.length){
+            prjSections.eq(i).find(".left").addClass("in");
+            prjSections.eq(i).find(".right").addClass("in");
+            i++; */
             
           }
+
         });
       }
 
