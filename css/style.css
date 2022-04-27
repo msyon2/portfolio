@@ -417,14 +417,15 @@ header .right .bg_shape {
 #section1 .tab ul li:first-of-type {
   z-index: 2;
   margin-right: 5rem;
+  margin-right: 7.5vw;
 }
 #section1 .tab ul li:first-of-type::after {
   content: '&';
   display: block;
   position: absolute;
   top: 5px;
-  right: -5vw;
-  width: 50px;
+  right: -6.5vw;
+  width: 5vw;
   color: var(--accent-clr);
   font-size: 6vw;
   line-height: 7vw;
@@ -444,7 +445,6 @@ header .right .bg_shape {
   right: 0;
   border-radius: 5vw 0 0 5vw;
   border-radius: 5vw;
-  z-index: 9;
 }
 #section1 .tab ul li a {
   font-family: "NewYork";
@@ -460,10 +460,6 @@ header .right .bg_shape {
   backdrop-filter: blur(15px);
   box-shadow: var(--box-shadow2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08),0 2px 15px rgba(0, 0, 0, 0.08);
-}
-#section1 .tab ul li:nth-of-type(2):hover {
-  background: var(--bg-clr);
-  box-shadow: none;
 }
 #section1 .tab ul li:hover a,
 #section1 .tab ul li.active a {
