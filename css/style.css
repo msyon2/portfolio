@@ -403,9 +403,22 @@ header .right .bg_shape {
   /* padding-top: 100px; */
   padding-top: 6vw;
 }
+#section1 .tab ul::after {
+  content: '&';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3vw;
+  color: var(--accent-clr);
+  font-size: 4vw;
+  line-height: 7vw;
+  font-family: 'NewYork';
+}
 #section1 .tab ul li {
-  width: 500px;
-  /* width: 50vw; */
+  /* width: 500px; */
+  width: 50vw;
   /* height: 6vw;
   padding-top: 0.6vw; */
   /* border-radius: 0 5vw 5vw 0; */
@@ -418,18 +431,6 @@ header .right .bg_shape {
   z-index: 2;
   margin-right: 5rem;
   margin-right: 7.5vw;
-}
-#section1 .tab ul li:first-of-type::after {
-  content: '&';
-  display: block;
-  position: absolute;
-  top: 5px;
-  right: -6.5vw;
-  width: 5vw;
-  color: var(--accent-clr);
-  font-size: 6vw;
-  line-height: 7vw;
-  font-family: 'NewYork';
 }
 /* #section1 .tab ul li:nth-of-type(2){
   border: none;
@@ -927,7 +928,7 @@ header .right .bg_shape {
 
 /* section2 CTA buttons */
 .cta {
-  padding: 3rem 0;
+  padding: 3rem .4rem 0 0;
   font-family: "GmarketSans Medium";
   font-size: 18px;
   justify-content: flex-end;
