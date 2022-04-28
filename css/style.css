@@ -62,9 +62,9 @@ body::-webkit-scrollbar-thumb {
 body {
   font-family: "IBMPlexSansKR-Light", "S-CoreDream-L", "LeferiPoint-WhiteA",
     sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.7;
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.01rem;
   color: var(--txt-clr);
 }
 a {
@@ -407,14 +407,13 @@ header .right .bg_shape {
   content: '&';
   display: block;
   position: absolute;
-  top: 5px;
   left: 50%;
   transform: translateX(-50%);
   width: 3vw;
   color: var(--accent-clr);
   font-size: 4vw;
-  line-height: 7vw;
-  font-family: 'NewYork';
+  line-height: 6vw;
+  font-family: "NewYork";
 }
 #section1 .tab ul li {
   /* width: 500px; */
@@ -449,7 +448,7 @@ header .right .bg_shape {
 }
 #section1 .tab ul li a {
   font-family: "NewYork";
-  font-size: 4vw;
+  font-size: 3vw;
   /* color: rgba(119, 95, 84, 0.4); */
   color: var(--accent-clr);
   text-align: center;
@@ -654,7 +653,7 @@ header .right .bg_shape {
 #section2 .inner,
 #section3 .inner {
   /* padding-top: 100px; */
-  padding-top: 4vw;
+  padding-top: 5vw;
 }
 #section2 h2,
 #section3 h2 {
@@ -732,7 +731,7 @@ header .right .bg_shape {
 .mockup .laptop {
   width: 50%;
   top: 340px;
-  right: 100px;
+  right: 124px;
 }
 .mockup .laptop > img {
   width: 434px;
@@ -776,7 +775,10 @@ header .right .bg_shape {
 .mockup .mobile {
   width: 30%;
   top: 380px;
-  left: -60px;
+  left: -50px;
+}
+.project5 .mobile {
+  left: 600px;
 }
 .mockup .mobile > img {
   width: 130px;
@@ -799,7 +801,7 @@ header .right .bg_shape {
   top: 0;
 }
 .project2 .mockup .mobile:last-child {
-  left: 280px;
+  left: 260px;
 }
 .project2 .mockup .mobile > img {
   width: 270px;
@@ -825,9 +827,13 @@ header .right .bg_shape {
 #section2 .project4 .left,
 #section2 .project5 .right {
   width: 28%;
-  padding-top: 6vw;
+  padding-top: 4vw;
   transition: all 2s cubic-bezier(0.73, 0.02, 0.37, 1.12);
   opacity: 1;
+}
+#section2 .project4 .left {
+  width: 31%;
+  padding-top: 2vw;
 }
 #section2 .project1 .right,
 #section2 .project2 .left {
@@ -873,11 +879,11 @@ header .right .bg_shape {
   letter-spacing: -0.01em;
   color: var(--txt-clr2);
   font-style: oblique;
-  margin-right: 0.3vw;
+  margin-right: 0.4vw;
 }
 #section2 .duration,
 #section2 .programs {
-  font-size: 22px;
+  font-size: 18px;
   font-family: "GmarketSansMedium", "IBMPlexSansKR-Medium";
   opacity: .8;
 }
@@ -928,7 +934,7 @@ header .right .bg_shape {
 
 /* section2 CTA buttons */
 .cta {
-  padding: 3rem .2rem 0 0;
+  padding: 1rem 0;
   font-family: "GmarketSans Medium";
   font-size: 18px;
   justify-content: flex-end;
