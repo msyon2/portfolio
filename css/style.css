@@ -1096,7 +1096,6 @@ header .right .bg_shape {
 }
 .open {
   min-width: 100% !important;
-  background-size: content;
 }
 .gallery_wrap .gallery .work.open:hover .overlay {
   display: none;
@@ -1131,7 +1130,7 @@ header .right .bg_shape {
   z-index: 3;
 } */
 
-@keyframes shifting-gradient {
+/* @keyframes shifting-gradient {
   0% {
     background-position: 0% 50%;
   }
@@ -1141,40 +1140,28 @@ header .right .bg_shape {
   100% {
     background-position: 0% 50%;
   }
-}
+} */
+
+/* section 4 - contact */
 #section4 {
   background: var(--accent-clr);
   height: 400px;
   color: var(--bg-clr);
   font-family: 'GmarketSansLight';
 }
-
-/* #section4 {
-  background-image: 
-    radial-gradient(rgba(192, 31, 31, 0.3),rgba(255, 0, 0, 0) 40vw),
-    radial-gradient(rgba(180, 64, 64, 0.3), rgba(0, 128, 0, 0) 40vw),
-    radial-gradient(rgba(255, 0, 17, 0.3), rgba(0, 0, 255, 0) 40vw),
-    radial-gradient(rgba(255, 42, 0, 0.3), rgba(255, 255, 0, 0) 40vw),
-    radial-gradient(rgba(255, 0, 76, 0.3), rgba(255, 0, 0, 0) 40vw);
-  background-position: 
-    -40vw 14rem,
-    50% 10rem, 
-    60vw 14rem,
-    -10vw calc(14rem + 20vw), 
-    30vw calc(14rem + 20vw);
-  background-size: 80vw 80vw;
-  background-repeat: no-repeat;
-} */
 #section4 .inner {
-  height:80%;
-}
-#section4 h2 {
-  font-family: NewYork;
-  font-size: 3.5vw;
-  color: var(--bg-clr);
+  height:90%;
+  flex-direction: row-reverse;
 }
 #section4 .left {
   width: 35vw;
+  padding-top: 4vw;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.9;
+}
+#section4 .left .w3c_valid {
+  margin-right: 10px;
 }
 #section4 .left .copyright {
   font-size: 12px;
@@ -1182,12 +1169,14 @@ header .right .bg_shape {
 }
 #section4 .right {
   width: 60vw;
-  /* height: 100%; */
+  flex-direction: column;
+  justify-content: space-between;
 }
 #section4 .right .top{
   width: 100%;
   height: 40%;
   justify-content: flex-start;
+  margin-bottom: 4vw;
 }
 #section4 .logo_animate {
   width: 8vw;
@@ -1204,8 +1193,13 @@ header .right .bg_shape {
 #section4 .logo_animate object.right {
   left: 2.2vw;
 }
-#section4 h3 {
+#section4 h2 {
   font-size: 5vw;
+}
+#section4 h5 {
+  font-size: 2rem;
+  font-family: 'GmarketSansLight';
+  line-height: 1.5;
 }
 #section4 .contact {
   bottom: 0;
