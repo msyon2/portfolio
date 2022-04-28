@@ -803,17 +803,29 @@ header .right .bg_shape {
 .project2 .mockup .mobile:last-child {
   left: 260px;
 }
+.project2 .mockup .mobile .prototype {
+  top: 13px;
+  left: 18px;
+  width: 235px;
+  height: 508px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.project2 .mockup .mobile .prototype iframe {
+  width: 238px;
+  height: 110%;
+}
 .project2 .mockup .mobile > img {
   width: 270px;
   filter: none;
 }
-.project2 .mockup .mobile a {
+/* .project2 .mockup .mobile a {
   width: 234px;
   height: 508px;
   top: 13px;
   left: 18px;
   border-radius: 25px;
-}
+} */
 .project4 .mockup .mobile {
   top: 368px;
   left: 50px;
