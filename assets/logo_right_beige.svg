@@ -5,7 +5,7 @@
 	.logo_right{
 		fill:none;
 		stroke:#f4efea;
-		stroke-width:8;
+		stroke-width:5;
     <!-- filter:url(#multiply); -->
 		stroke-linecap:round;
 		stroke-linejoin:round;

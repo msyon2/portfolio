@@ -1,2 +1,4 @@
 ps/
 *.pdf
+.vscode
+no_commit/

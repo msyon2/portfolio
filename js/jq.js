@@ -18,16 +18,6 @@ topMenu.click(function (e) {
 $(window).on({
   mousemove: function (e) {
     gsap.to("#cursor", {duration: .2, left: e.pageX -4, top: e.pageY -4})
-
-    /* let pageX = e.pageX
-		let pageY = e.pageY
-
-		let standardX = $(window).width() / 2 - pageX
-		let standardY = $(window).height() / 2 - pageY
-
-		$(".sub_area .obj1").attr({ style: "transform : translate(" + standardX / 60 + "px," + standardY / 40 + "px)" })
-		$(".sub_area .obj2").attr({ style: "transform : translate(" + standardX / 20 + "px," + standardY / 20 + "px)" }) */
-
   }
 })
 
@@ -101,28 +91,7 @@ let aboutPg = $("#section1"),
   })
   tabPanel.eq(0).show();
   tabList.eq(0).addClass("active");
-  
-/* tabList.each(function (i, e) {
-  //console.log(i,e); //(index no, 값)
-  let tab = $(this); //this = 순환하고 있는 요소중 현재 번째
-  let link = tab.find("a").attr("href");
-  let panel = link.substr(1);
-  tab.click(function (e) {
-    e.preventDefault();
-    tabList.removeClass("active");
-    tab.addClass("active");
-    tabPanel.hide();
-    $("#"+panel).show(); 
-  });
-  
-  //Active tab triggers progressanimation
-  //if (tabList.eq(1).hasClass("active")){
-    //progressAnimation();
-  //}
 
-});
-tabPanel.eq(0).show();
-tabList.eq(0).addClass("active"); */
 
 
 //skills progress bar activate on scroll

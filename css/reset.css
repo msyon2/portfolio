@@ -165,7 +165,7 @@ select {
 	text-transform: none;
 }
 
-button,
+/* button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -176,7 +176,7 @@ input[type="submit"] {
 button[disabled],
 html input[disabled] {
 	cursor: default;
-}
+} */
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
