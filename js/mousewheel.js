@@ -8,19 +8,15 @@ jQuery(function () {
     slideH = slide.outerHeight();
   (cnt = 0), (current = null);
 
+
   $(".section").each(function (index) {
+    //0 1 2 ... 8 (9개섹션)
     $(this).on("mousewheel DOMMouseScroll", function (event) {
       event.preventDefault();
 
-      //크로스브라우징 파이어폭스 마우스휠이벤트 DOMMouseScroll
-      //사용자가 사용중인 브라우저 종류 - 소문자 변환 통일 toLowerCase() / toUpperCase()
-      // indexOf() 일치하면 첫번째인덱스값 반환 0, 불일치 -1
       browser = window.navigator.userAgent.toLowerCase().indexOf("firefox");
 
-      // browser>=0 파이어폭스
       if (browser >= 0) {
-        //- 파이어폭스의 휠 델타 값(기본값 아래:3,  위:-3)
-        //- 변환 : 아래 -120 위 120
         wheelDelta = -event.detail * 40;
       } else {
         wheelDelta = event.originalEvent.wheelDelta;
@@ -28,20 +24,19 @@ jQuery(function () {
       //console.log(wheelDelta);
 
       if (wheelDelta < 0) {
-        //아래로 섹션 다음(next())으로 이동
         if (index < $(".section").length - 1) {
           if (index != 2) {
             $("html,body")
               .stop()
               .animate({ scrollTop: $(this).next().offset().top }, 1000);
-            
+			  projAnimation();
           } else {
             current = $(this);
             nextSlide();
           }
         }
       } else {
-        //위로 섹션 이전(prev())으로 이동
+        //위로 섹션 이전(prev())으로 이동 120
         if (index > 0) {
           if (index != 2) {
             $("html,body")
@@ -58,16 +53,16 @@ jQuery(function () {
       function nextSlide() {
         if (!slide.is(":animated")) {
           cnt++;
-          slideAnimation();
         }
-        if (cnt >= 4) {
-          cnt = 4;
+        if (cnt >= 3) {
+          cnt = 3;
         }
         slide.stop().animate({ top: -slideH * cnt }, 800, function () {
-          if (cnt == 4) {
+          if (cnt == 3) {
             $("html,body")
               .stop()
               .animate({ scrollTop: current.next().offset().top }, 800);
+			  
           }
         });
       }
@@ -89,34 +84,15 @@ jQuery(function () {
       }
 
 
-      //project slide animation trigger 함수
-      function slideAnimation(){
-        const prjSections = $("#section2 .portfolio");
-        let newWheelDelta = prjSections.outerHeight();
-        let slideScrollTop = prjSections.offset().top;
-        //console.log(newWheelDelta);
-
-        prjSections.each(function(i,o) {
-           
-          
-          if (prjSections.eq(i).offset().top = slideScrollTop - (newWheelDelta * i) ){
-            console.log(slideScrollTop)
-            console.log(prjSections.offset().top)
-            
-            prjSections.eq(i).find(".left").addClass("in");
-            prjSections.eq(i).find(".right").addClass("in");
-            i++;
-
-          /* if (newWheelDelta >= -900 && i <= prjSections.length){
-            prjSections.eq(i).find(".left").addClass("in");
-            prjSections.eq(i).find(".right").addClass("in");
-            i++; */
-            
-          }
-
-        });
-      }
+	  
+	  /* project animation doesn't load when its proj slide page is loaded
+	  	how to trigger the animation????
+	  */
+      //project section slide-ins
+	  function projAnimation(indx){
+      console.log(indx)
+	}
 
     });
   });
-});
+}); //mousewheel.js
