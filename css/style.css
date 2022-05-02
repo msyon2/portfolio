@@ -1073,6 +1073,7 @@ header .right .bg_shape {
 #section4 .inner {
   height:90%;
   flex-direction: row-reverse;
+  padding-top: 90px;
 }
 #section4 .left {
   width: 35vw;
@@ -1098,7 +1099,7 @@ header .right .bg_shape {
   width: 100%;
   height: 40%;
   justify-content: flex-start;
-  margin-bottom: 4vw;
+  margin-bottom: 5vw;
 }
 #section4 .logo_animate {
   width: 105px;
@@ -1114,7 +1115,8 @@ header .right .bg_shape {
   left: 40px;
 }
 #section4 h2 {
-  font-size: 5vw;
+  font-size: 80px;
+  line-height: 1;
 }
 #section4 h5 {
   font-size: 1.8rem;
