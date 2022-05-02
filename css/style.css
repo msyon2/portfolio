@@ -86,6 +86,7 @@ a {
 .container {
   width: 100vw;
   background: var(--bg-clr);
+  cursor: none;
 }
 .inner {
   width: 90vw;
@@ -926,7 +927,7 @@ header .right .bg_shape {
   mix-blend-mode: screen;
 }
 .git {
-  background: url(../images/icon_github_inactive.png) center/contain no-repeat;
+  background: url(../images/icon_github_inactive.png) top /contain no-repeat;
 }
 #section2 .cta span.download {
   font-family: "Material Icons";
@@ -956,7 +957,7 @@ header .right .bg_shape {
   letter-spacing: 0.01rem;
 }
 #section2 .btn.rounded:first-child .txt-clr {
-  top: 2px;
+  top: 1px;
   margin-left: 0.2rem;
 }
 #section2 .btn.rounded:hover .txt-clr {
@@ -984,7 +985,7 @@ header .right .bg_shape {
 .gallery_wrap {
   width: 1200px;
   margin: auto;
-  padding-top: 10vw;
+  padding-top: 6vw;
 }
 .gallery_wrap .gallery {
   width: 100%;
@@ -1043,6 +1044,9 @@ header .right .bg_shape {
   z-index: 2;
   visibility: hidden;
 }
+.gallery_wrap .gallery span.desc {
+  top: 90%;
+}
 .gallery_wrap .gallery .work:hover span {
   visibility: visible;
 }
@@ -1072,17 +1076,18 @@ header .right .bg_shape {
 }
 #section4 .left {
   width: 35vw;
-  padding-top: 4vw;
+  padding-top: 13vw;
   flex-direction: column;
   justify-content: space-between;
   line-height: 1.9;
 }
-#section4 .left .w3c_valid {
+#section4 .left .w3c_valid a {
   margin-right: 10px;
 }
 #section4 .left .copyright {
   font-size: 12px;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 #section4 .right {
   width: 60vw;
@@ -1097,8 +1102,6 @@ header .right .bg_shape {
 }
 #section4 .logo_animate {
   width: 105px;
-  /* height: 80%; */
-  top: 1.3vw;
   left: -3vw;
 }
 #section4 .logo_animate object {
