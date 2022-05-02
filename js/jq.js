@@ -84,10 +84,10 @@ tabPanel.eq(0).show();
 tabList.eq(0).addClass("active");
 
 //skills progress bar activate on scroll
-/* let animationOst = $("#skills").offset().top - 600;
+let animationOst = $("#skills").offset().top - 600;
 const progressWrap = $(".bar");
 let isAni = false;
- */
+
 /* $(window).scroll(function () {
   if ($(window).scrollTop() >= animationOst && !isAni) {
     //start the animation after specified time
