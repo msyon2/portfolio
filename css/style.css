@@ -1076,7 +1076,7 @@ header .right .bg_shape {
 }
 #section4 .left {
   width: 35vw;
-  padding-top: 13vw;
+  padding-top: 160px;
   flex-direction: column;
   justify-content: space-between;
   line-height: 1.9;
