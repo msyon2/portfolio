@@ -339,6 +339,9 @@ header .left .slogan_en {
   background-size: 200% 200%;
   z-index: 3;
 }
+/* heaader .left .slogan_en:hover {
+  mix-blend-mode: difference;
+} */
 
 @keyframes shifting-gradient {
   0% {
