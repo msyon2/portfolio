@@ -23,10 +23,12 @@ $(window).on({
 //cursor animation
 $(".slogan_en").hover(
   function () {
+    $("#cursor").addClass("blend");
     $(".cursor_dot").addClass("style1");
     $(".cursor_dot_outline").addClass("style1");
   },
   function () {
+    $("#cursor").removeClass("blend");
     $(".cursor_dot").removeClass("style1");
     $(".cursor_dot_outline").removeClass("style1");
   }
@@ -46,10 +48,12 @@ $("#intro .right > div").hover(
 const clickable = $(".clickable");
 clickable.hover(
   function () {
+    $("#cursor").addClass("blend2");
     $(".cursor_dot").addClass("click");
     $(".cursor_dot_outline").addClass("click");
   },
   function () {
+    $("#cursor").removeClass("blend2");
     $(".cursor_dot").removeClass("click");
     $(".cursor_dot_outline").removeClass("click");
   }
