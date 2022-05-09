@@ -20,6 +20,43 @@ $(window).on({
   },
 });
 
+//cursor animation
+$(".slogan_en").hover(
+  function () {
+    $(".cursor_dot").addClass("style1");
+    $(".cursor_dot_outline").addClass("style1");
+  },
+  function () {
+    $(".cursor_dot").removeClass("style1");
+    $(".cursor_dot_outline").removeClass("style1");
+  }
+);
+
+$("#intro .right > div").hover(
+  function () {
+    $(".cursor_dot").addClass("style2");
+    $(".cursor_dot_outline").addClass("style2");
+  },
+  function () {
+    $(".cursor_dot").removeClass("style2");
+    $(".cursor_dot_outline").removeClass("style2");
+  }
+);
+
+const clickable = $(".clickable");
+clickable.hover(
+  function () {
+    $(".cursor_dot").addClass("click");
+    $(".cursor_dot_outline").addClass("click");
+  },
+  function () {
+    $(".cursor_dot").removeClass("click");
+    $(".cursor_dot_outline").removeClass("click");
+  }
+);
+
+
+
 /* ***SCROLL Events*** */
 //sticky header
 function stickyFn() {
