@@ -695,7 +695,9 @@ header .right .bg_shape {
   top: 2px;
   right: 3%;
 }
-
+#section1 .inner .tab_content #skills li:last-of-type .bar .rate {
+  color: var(--white);
+}
 /* SECTION2 project pg */
 .portfolio {
   width: 100%;
