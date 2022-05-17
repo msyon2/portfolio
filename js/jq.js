@@ -59,8 +59,6 @@ clickable.hover(
   }
 );
 
-
-
 /* ***SCROLL Events*** */
 //sticky header
 function stickyFn() {
@@ -187,11 +185,18 @@ $(".hidden").hover(
   }
 );
 
-/* gallery open toggle*/
-const cards = $(".work");
-cards.on({
-  click: function (e) {
-    e.preventDefault();
-    $(this).toggleClass("open");
-  },
+/*  gallery hover project detail show/hide */
+const cards = $(".work"),
+  prevBtn = $(".prev"),
+  nextBtn = $(".next");
+cards.each(function (i) {
+  cards.eq(i).hover(
+    function () {
+      cards.removeClass("open");
+      cards.eq(i).addClass("open");
+    },
+    function () {
+      cards.eq(i).removeClass("open");
+    }
+  );
 });

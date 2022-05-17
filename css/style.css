@@ -1083,6 +1083,10 @@ header .right .bg_shape {
 .work.p5 {
   background: url("../images/gallery_slide4.jpg");
 }
+.gallery_wrap .gallery .work .overlay {
+  display: none;
+  transition: all 0.3s cubic-bezier(0.65, 0, 0.076, 1);
+}
 .gallery_wrap .gallery .work:hover .overlay {
   top: 0;
   bottom: 0;
@@ -1098,34 +1102,138 @@ header .right .bg_shape {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background-blend-mode: multiply;
+  z-index: 9;
+  display: block;
+}
+.gallery_wrap .gallery .work .desc_checkbox {
+  display: none;
+}
+.gallery_wrap .gallery .work:hover label {
+  display: block;
+}
+.gallery_wrap .gallery .work .desc_checkbox:checked ~ .overlay {
+  display: none;
+}
+.gallery_wrap .gallery label {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  display: none;
+  position: absolute;
+  z-index: 10;
+  left: 5rem;
+  top: 5rem;
+}
+.gallery_wrap .gallery label.cross,
+.gallery_wrap .gallery label.plus {
+  display: block;
+}
+.gallery_wrap .gallery label i::before,
+.gallery_wrap .gallery label i::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: var(--bg-clr);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.gallery_wrap .gallery label i::before {
+  transform: rotate(45deg);
+}
+.gallery_wrap .gallery label i::after {
+  transform: rotate(-45deg);
+}
+.desc_checkbox:checked ~ label i::before {
+  transform: rotate(90deg);
+}
+.desc_checkbox:checked ~ label i::after {
+  transform: rotate(180deg);
 }
 .gallery_wrap .gallery span {
   display: block;
   color: var(--bg-clr);
   font-family: "GmarketSansLight";
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
+  top: 5rem;
+  left: 12rem;
+  z-index: 10;
   visibility: hidden;
+  text-transform: uppercase;
 }
 .gallery_wrap .gallery span.desc {
-  top: 90%;
+  font-size: 0.8rem;
+  top: 6.8rem;
 }
 .gallery_wrap .gallery .work:hover span {
   visibility: visible;
 }
-.open {
+.gallery_wrap .gallery .work.open {
   min-width: 100% !important;
 }
-.gallery_wrap .gallery .work.open:hover .overlay {
-  display: none;
+/* gallery description card */
+.gallery_wrap .gallery .overlay .desc_card {
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(140, 24, 46, 0.4),
+    rgba(140, 40, 59, 0.2),
+    rgba(196, 44, 72, 0.42),
+    rgba(140, 24, 46, 0.4)
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-blend-mode: multiply;
+  color: var(--white);
+  letter-spacing: 0.05rem;
+  padding: 6rem 4rem 4rem;
+  z-index: 10;
+  right: 0;
 }
-.gallery_wrap .gallery .work.open:hover span {
-  display: none;
+.gallery_wrap .gallery .desc_card h3 {
+  font-family: "GmarketSansMedium";
+  font-size: 1.5rem;
+  line-height: 1.2;
+  padding-bottom: 4rem;
 }
-.close {
-  min-width: 0% !important;
+.gallery_wrap .gallery .desc_card .scope {
+  font-family: "GmarketSansLight";
+  text-transform: uppercase;
+  padding-left: 1rem;
+  /* padding-bottom: 1rem; */
+  text-align: left;
+}
+.gallery_wrap .gallery .desc_card .scope::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 63px;
+  background-color: var(--bg-clr);
+}
+.gallery_wrap .gallery .desc_card .scope h4 {
+  font-size: 0.8rem;
+  padding-bottom: 0.7rem;
+}
+.gallery_wrap .gallery .desc_card .scope h4:nth-child(2) {
+  padding-bottom: 0.2rem;
+  line-height: 0.7;
+}
+.gallery_wrap .gallery .desc_card .scope ul {
+  font-size: 0.7rem;
+  padding-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.gallery_wrap .gallery .desc_card .scope ul li {
+  margin-right: 0.3rem;
+}
+.gallery_wrap .gallery .desc_card p {
+  text-align: left;
 }
 
 /* section 4 - contact */
