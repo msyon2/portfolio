@@ -616,7 +616,6 @@ header .right .bg_shape {
   font-family: "IBMPlexSansKR-Light", "GmarketSansLight";
   border: none;
   line-height: 27px;
-  /* padding: .25rem; */
 }
 /* Section1 keyword */
 #section1 .keyword .inner {
@@ -1026,7 +1025,6 @@ header .right .bg_shape {
   margin-left: 0.2rem;
 }
 #section2 .btn.rounded:hover .txt-clr {
-  /* color: var(--accent-clr); */
   color: var(--bg-clr);
   mix-blend-mode: screen;
 }
@@ -1058,7 +1056,7 @@ header .right .bg_shape {
   overflow: hidden;
 }
 .gallery_wrap .gallery .work {
-  width: 20%;
+  flex: 1;
   min-height: 100%;
   text-align: center;
   background-size: cover;
@@ -1171,7 +1169,7 @@ header .right .bg_shape {
   visibility: visible;
 }
 .gallery_wrap .gallery .work.open {
-  min-width: 100% !important;
+  flex: 70;
 }
 /* gallery description card */
 .gallery_wrap .gallery .overlay .desc_card {
@@ -1203,7 +1201,6 @@ header .right .bg_shape {
   font-family: "GmarketSansLight";
   text-transform: uppercase;
   padding-left: 1rem;
-  /* padding-bottom: 1rem; */
   text-align: left;
 }
 .gallery_wrap .gallery .desc_card .scope::before {
@@ -1235,7 +1232,6 @@ header .right .bg_shape {
 .gallery_wrap .gallery .desc_card p {
   text-align: left;
 }
-
 /* section 4 - contact */
 #section4 {
   background: var(--accent-clr);
