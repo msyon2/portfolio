@@ -10,7 +10,7 @@ topMenu.click(function (e) {
   let section = $(".section").eq(index);
   let offset = section.offset().top;
   //offset gets coordinate value
-  $("html,body").animate({ scrollTop: offset }, 1000, "easeOutCirc");
+  $("html,body").animate({ scrollTop: offset }, 2000, "easeOutCirc");
 });
 
 //custom cursor
@@ -186,9 +186,7 @@ $(".hidden").hover(
 );
 
 /*  gallery hover project detail show/hide */
-const cards = $(".work"),
-  prevBtn = $(".prev"),
-  nextBtn = $(".next");
+const cards = $(".work");
 cards.each(function (i) {
   cards.eq(i).hover(
     function () {

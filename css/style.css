@@ -1169,7 +1169,7 @@ header .right .bg_shape {
   visibility: visible;
 }
 .gallery_wrap .gallery .work.open {
-  flex: 70;
+  flex: 50;
 }
 /* gallery description card */
 .gallery_wrap .gallery .overlay .desc_card {
@@ -1232,6 +1232,7 @@ header .right .bg_shape {
 .gallery_wrap .gallery .desc_card p {
   text-align: left;
 }
+
 /* section 4 - contact */
 #section4 {
   background: var(--accent-clr);
