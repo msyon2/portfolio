@@ -1169,7 +1169,7 @@ header .right .bg_shape {
   visibility: visible;
 }
 .gallery_wrap .gallery .work.open {
-  flex: 50;
+  flex: 55;
 }
 /* gallery description card */
 .gallery_wrap .gallery .overlay .desc_card {
